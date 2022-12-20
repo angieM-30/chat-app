@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="dist/font-awesome/css/all.css" />
+    <link rel="stylesheet" href="/public/css/chat.css" />
+    <title>Chat App</title>
+  </head>
+  <body>
+    <div class="m-auto chat">
+      <div class="sidebar">
+        <h3>People</h3>
+        <div id="users"></div>
+      </div>
+
+      <div class="main">
+        <ol id="messages" class="messages"></ol>
+
+        <div class="footer">
+            <form action="#" id="message-form">
+                <input type="text" name="message" placeholder="Message" autofocus autocomplete="off">
+                <button class="btn btn-sm btn-dark">Send</button>
+            </form>
+            <button id="send-loc">Send Location</button>
+        </div>
+      </div>
+
+    </div>
+
+
+    <script src="/public/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
