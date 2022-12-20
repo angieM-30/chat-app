@@ -1,36 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/public/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="dist/font-awesome/css/all.css" />
-    <link rel="stylesheet" href="/public/css/chat.css" />
-    <title>Chat App</title>
-  </head>
-  <body>
-    <div class="m-auto chat">
-      <div class="sidebar">
-        <h3>People</h3>
-        <div id="users"></div>
-      </div>
-
-      <div class="main">
-        <ol id="messages" class="messages"></ol>
-
-        <div class="footer">
-            <form action="#" id="message-form">
-                <input type="text" name="message" placeholder="Message" autofocus autocomplete="off">
-                <button class="btn btn-sm btn-dark">Send</button>
-            </form>
-            <button id="send-loc">Send Location</button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="./dist/font-awesome/css/all.css" />
+        <link rel="stylesheet" href="./css/chat.css" />
+        <title>Chat App</title>
+    </head>
+    <body>
+        <div class="m-auto chat">
+        <div class="sidebar">
+            <h3 class="fw-bold">People</h3>
+            <div id="users"></div>
         </div>
-      </div>
 
+        <div class="main">
+            <ol id="messages" class="messages"></ol>
+
+            <div class="footer">
+                <form action="#" id="message-form">
+                    <input type="text" name="message" class="rounded" placeholder="Message" autofocus autocomplete="off">
+                    <button class="btn btn-sm btn-dark">Send 
+                        <span><i class="fa fa-paper-plane" aria-hidden="true"></i></span>
+                    </button>
+                </form>
+                <button id="send-loc" class="btn btn-sm btn-dark px-4 text-center">Send Location</button>
+            </div>
+        </div>
     </div>
+        <script id="message-template" type="text/template">
+            <li class="message">
+            <div class="message__title">
+                <h4>{{from}}</h4>
+                <span>{{createdAt}}</span>
+            </div>
+            <div class="message__body">
+                <p>{{text}}</p>
+            </div>
+            </li>
+        </script>
+        <script id="location-message-template" type="text/template">
+            <li class="message">
+            <div class="message__title">
+                <h4>{{from}}</h4>
+                <span>{{createdAt}}</span>
+            </div>
+            <div class="message__body">
+                <p>
+                <a href="{{url}}" target="_blank">My current location</a>
+                </p>
+            </div>
+            </li>
+        </script>
 
-
-    <script src="/public/dist/js/bootstrap.min.js"></script>
-  </body>
+        <script src="./js/chat.js"></script>
+        <script src="./dist/js/bootstrap.min.js"></script>
+    </body>
 </html>
