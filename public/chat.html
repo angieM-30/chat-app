@@ -19,7 +19,7 @@
     <div class="main">
         <ol id="messages" class="messages"></ol>
 
-        <div class="chat_footer">
+        <div class="chat_footer ms-2">
             <form action="#" id="message-form">
                 <div class="input-group">
                     <input type="text" name="message" class="message-box form-control" placeholder="Message" autofocus autocomplete="off">
@@ -30,28 +30,28 @@
                     </div>
                 </div>
             </form>
-            <button id="send-loc" class="btn btn-sm btn-dark px-5 mt-2 rounded mb-3 text-center">Send Location</button>
+            <button id="send-loc" class="btn btn-sm btn-dark ms-2 px-4 rounded mb-3 text-center">Send Location</button>
         </div>
     </div>
     </div>
         <script id="message-template" type="text/template">
             <li class="message">
-                <div class="message__title">
+                <div class="message_title">
                     <h4>{{from}}</h4>
                     <span>{{createdAt}}</span>
                 </div>
-                <div class="message__body">
+                <div class="message_body">
                     <p>{{text}}</p>
                 </div>
             </li>
         </script>
         <script id="location-message-template" type="text/template">
             <li class="message">
-            <div class="message__title">
+            <div class="message_title">
                 <h4>{{from}}</h4>
                 <span>{{createdAt}}</span>
             </div>
-            <div class="message__body">
+            <div class="message_body">
                 <p>
                 <a href="{{url}}" target="_blank">My current location</a>
                 </p>
@@ -59,6 +59,11 @@
             </li>
         </script>
 
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="./js/libs/jquery-3.1.0.min.js"></script>
+        <script src="./js/libs/moment.js"></script>
+        <script src="./js/libs/mustache.js"></script>
+        <script src="./js/libs/deparam.js"></script>
         <script src="./js/chat.js"></script>
         <script src="./dist/js/bootstrap.min.js"></script>
     </body>
